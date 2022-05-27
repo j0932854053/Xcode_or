@@ -6,13 +6,12 @@
 //
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
-
-int main() {
-    int a[]={6,7,8,9,10};
-    int *p=a;
-    *(p++)+=123;
-    printf("*(p++)+=123=%d\n",*p);
-    *(++p)+=123;
-    printf("*(++p)+=123=%d\n",*p);
+int main(int argc, char** argv) {
+    //srand(time);
+    printf("%f",time(NULL));
 }
+int x = 10;
