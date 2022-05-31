@@ -4,20 +4,46 @@
 //
 //  Created by 龔星宇 on 2022/4/15.
 //
-
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-//#include <time.h>
-
-int main(int argc, char** argv) {
-    int a = 10;
-    int *ptr1 = &a;
-    int **ptr2 = &ptr1;
-    printf("*ptr1:%d\n",*ptr1);
-    printf("**ptr2:%d\n",**ptr2);
-    
-    
-    printf("\n");
+void Swap(int *x, int *y) {
+    int Temp;
+    Temp = *x;
+    *x = *y;
+    *y = Temp;
 }
-
+void quickSort(int a[], int first, int last) {
+    int pivot, i, j;
+    if(first < last) {
+        pivot = first;
+        i = first;
+        j = last;
+        while (i < j) {
+            while(a[i] <= a[pivot] && i < last)
+                i++;
+            while(a[j] > a[pivot])
+                j--;
+            if(i < j) {
+                Swap(&a[i], &a[j]);
+            }
+        }
+        Swap(&a[pivot], &a[j]);
+        quickSort(a, first, j - 1);
+        quickSort(a, j + 1, last);
+    }
+}
+int main() {
+    int a[100], number, i;
+    printf("\n Please Enter the total Number of Elements  :  ");
+    scanf("%d", &number);
+    printf("\n Please Enter the Array Elements  :  ");
+    for(i = 0; i < number; i++)
+        scanf("%d", &a[i]);
+    
+    quickSort(a, 0, number - 1);
+    printf("\n Selection Sort Result : ");
+    for(i = 0; i < number; i++)  {
+        printf(" %d \t", a[i]);
+    }
+    printf("\n");
+    return 0;
+}
