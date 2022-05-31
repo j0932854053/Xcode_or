@@ -8,27 +8,28 @@
 void quick_sort(int arr[], int left, int right) {
     
     if(left < right) {
-        int pivot = left;
-        int i = left;
-        int j = right;
+        int pivot = left;   // pivot設為基準值
+        int i = left;   // 由左至右的索引
+        int j = right;  // 由左至右的索引
         while (i < j) {
-            while(arr[i] <= arr[pivot] && i < right)
-                i++;
-            while(arr[pivot]< arr[j] )
-                j--;
+            while(arr[i] <= arr[pivot] && i < right)    // i++後才不會超過陣列的範圍
+                i++;    // i++後會在比pivot小的下一個位置
+            while(arr[pivot] < arr[j] )
+                j--;    // j--後會在i++左邊的位置
             if(i < j) {
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
             }
         }
-        int temp2 = arr[j];
+        int temp2 = arr[j]; // 將 pivot 與 j 交換。 所以這邊才要跟j交換而不是i
         arr[j] = arr[pivot];
         arr[pivot] = temp2;
         
        
-        quick_sort(arr, pivot, j - 1);
-        quick_sort(arr, j + 1, right);
+        quick_sort(arr, pivot, j - 1);  // 遞迴排序基準點左子序列
+        quick_sort(arr, j + 1, right);  // 遞迴排序基準點右子序列
+
     }
 }
 
