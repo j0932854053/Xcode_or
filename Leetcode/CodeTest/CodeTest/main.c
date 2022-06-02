@@ -4,20 +4,28 @@
 //
 //  Created by 龔星宇 on 2022/4/15.
 //
+
 #include <stdio.h>
-int main()
-{
-    int a = 0;
-    int b = 0;
-    int c = 0;
-    int d = 0;
-    int cnt;
-    for(cnt = 5 ; cnt-- ; ++a);
-    for(cnt = 5 ; --cnt ; b++);
-    for(cnt = 5 ; --cnt>0 ; ++c);
-    for(cnt = 5 ; cnt-->0 ; d++);
-    printf("%d",a*b*c*d);
+#include <stdlib.h>
+
+ 
+int main(int argc, const char * argv[]) {
+    int i = 5;
+    int count = 0;
+    int result = i;
+    while (result) {
+        //test = (result)&0x00000001;
+        count = count + (result&0x00000001);
+        printf("%d ",result);
+        printf("%d \n",count);
+        
+        result = result>>1;
+        
+    }
+    printf("%d \n",count);
+    
+    
+    printf("\n");
+    
     return 0;
-    // a = 5 , b = 4 , c = 4 , d = 5
-    // 400
 }
