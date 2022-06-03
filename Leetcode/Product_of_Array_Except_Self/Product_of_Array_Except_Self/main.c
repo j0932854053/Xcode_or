@@ -1,8 +1,8 @@
 //
 //  main.c
-//  CodeTest
+//  Product_of_Array_Except_Self
 //
-//  Created by 龔星宇 on 2022/4/15.
+//  Created by 龔星宇 on 2022/6/3.
 //
 
 #include <stdio.h>
