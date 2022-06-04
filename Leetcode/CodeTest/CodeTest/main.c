@@ -12,7 +12,7 @@ int* productExceptSelf(int* nums, int numsSize, int* returnSize){
 
     int prefix = 1;
     int postfix = 1;
-    //*returnSize = numsSize;
+    *returnSize = numsSize;
     
     int *ret = (int* ) malloc(sizeof(int)*numsSize);
     ret[0] = 1;
@@ -34,13 +34,13 @@ int main(int argc, const char * argv[]) {
     int arr[] = {1,2,3,4};
     int len = sizeof(arr)/sizeof(arr[0]);
     int *ans;
-    int *returnsize = {0};
+    int returnsize_temp = 0;
     
     printf("list = ");
     for (int i = 0; i<len; i++) {
         printf("%d ",arr[i]);
     }
-    ans = productExceptSelf(arr, len, returnsize);
+    ans = productExceptSelf(arr, len, &returnsize_temp);
     printf("\n");
     printf("ans  = ");
     for (int i = 0; i<len; i++) {
@@ -48,6 +48,7 @@ int main(int argc, const char * argv[]) {
     }
     free(ans);
     printf("\n");
+    
     
     return 0;
 }
