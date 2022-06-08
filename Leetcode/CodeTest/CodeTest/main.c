@@ -9,30 +9,33 @@
 #include <stdlib.h>
 
 int cmp(const void *a, const void *b) {
-    int ia = ((int **)a)[0][0];
-    int ib = ((int **)b)[0][0];
+    int ia = ((int **)a)[0][1];
+    int ib = ((int **)b)[0][1];
+    if ((ia - ib)==0) {
+        return (((int **)a)[0][0]-((int **)b)[0][0]);
+    }
     return (ia - ib);
 }
 
 int eraseOverlapIntervals(int** intervals, int intervalsSize, int* intervalsColSize){
-    int i, count = 0;
+    int count = 0;
     
-    /* Sort the intervals based on the start time of each intervals */
+    
     qsort(intervals, intervalsSize, sizeof(intervals[0]), cmp);
-    int end = intervals[0][1];
-
-    for(i = 1; i < intervalsSize; i++) {
-        /* To check the overlap, simply check the end time with the start time of each new interval
-          maintain the end to be minimum of the 2 overlapped interval to minimize the number of erase           */
-        if(end > intervals[i][0]) {
-            //overlap
-            end = end < intervals[i][1]? end:intervals[i][1];
-            count++;
-        } else {
-            /* If there is no overlap, change 'end' to be the current interval's end */
+    //int end = intervals[0][1];
+    int end = intervals[0][0];
+    for (int i = 0; i<intervalsSize; i++) {
+        if (end<=intervals[i][0]) {
             end = intervals[i][1];
         }
+        else{
+            count++;
+        }
     }
+    
+
+
+
     return count;
 }
 
