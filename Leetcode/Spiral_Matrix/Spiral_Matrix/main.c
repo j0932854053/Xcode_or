@@ -21,6 +21,51 @@ int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSi
     int *ret = (int* ) malloc(sizeof(int) * matrixSize * (*matrixColSize));
     
     int up = 0;
+    int down = matrixSize-1;
+    int left = 0;
+    int right = (* matrixColSize)-1;
+    int counter = 0;
+    
+    while ((up<=down) || (up<=down)) {
+        if (up<=down) {
+            for (int i = left; i<=right; i++) {
+                ret[counter] = matrix[up][i];
+                counter++;
+            }
+            up++;
+        }
+    
+        
+        if (left<=right) {
+            for (int i = up; i<=down; i++) {
+                ret[counter] = matrix[i][right];
+                counter++;
+            }
+            right--;
+        }
+        
+        
+        if (up<=down) {
+            for (int i = right; i>=left; i--) {
+                ret[counter] = matrix[down][i];
+                counter++;
+            }
+            down--;
+        }
+        
+        
+        if (left<=right) {
+            for (int i = down; i>=up; i--) {
+                ret[counter] = matrix[i][left];
+                counter++;
+            }
+            left++;
+        }
+        
+        
+    }
+    /*
+    int up = 0;
     int down = matrixSize;
     int left = 0;
     int right = (* matrixColSize);
@@ -64,6 +109,8 @@ int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSi
         
         
     }
+     */
+    
     /*
     while (1) {
         if (up<=down) {
