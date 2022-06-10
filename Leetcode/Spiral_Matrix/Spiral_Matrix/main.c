@@ -19,14 +19,14 @@ int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSi
     
     * returnSize = matrixSize * (*matrixColSize);
     int *ret = (int* ) malloc(sizeof(int) * matrixSize * (*matrixColSize));
-    
+   // /*
     int up = 0;
     int down = matrixSize-1;
     int left = 0;
     int right = (* matrixColSize)-1;
     int counter = 0;
     
-    while ((up<=down) || (up<=down)) {
+    while ((up<=down) && (left<=right)) {
         if (up<=down) {
             for (int i = left; i<=right; i++) {
                 ret[counter] = matrix[up][i];
@@ -64,6 +64,7 @@ int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSi
         
         
     }
+   // */
     /*
     int up = 0;
     int down = matrixSize;
@@ -71,7 +72,7 @@ int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSi
     int right = (* matrixColSize);
     int counter = 0;
     
-    while ((up<=down) && (up<=down)) {
+    while ((up<=down) && (left<=right)) {
         if (up<=down) {
             for (int i = left; i<right; i++) {
                 ret[counter] = matrix[up][i];
@@ -165,7 +166,7 @@ int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSi
 int main(int argc, const char * argv[]) {
     
     //int matrix_test[][3] = {{1,2,3},{4,5,6},{7,8,9}};
-    int matrix_test[][5] = {{1,2,3,4,11},{5,6,7,8,22},{9,10,11,12,32}};
+    int matrix_test[][5] = {{0,1,2,3,4},{10,11,12,13,14},{20,21,22,23,24}};
     //int matrix_test[][2] = {{1,2},{4,5},{7,8}};
     int* ptr[3];
     ptr[0] = &matrix_test[0][0];
