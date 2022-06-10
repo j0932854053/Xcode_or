@@ -30,8 +30,8 @@ int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSi
     int right = (* matrixColSize);
     int counter = 0;
     
-    while ((up<=down) && (left<=right)) {
-        if (up<=down) {
+    while ((up<down) && (left<right)) {
+        if (up<down) {
             for (int i = left; i<right; i++) {
                 ret[counter] = matrix[up][i];
                 counter++;
@@ -40,7 +40,7 @@ int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSi
         }
     
         
-        if (left<=right) {
+        if (left<right) {
             for (int i = up; i<down; i++) {
                 ret[counter] = matrix[i][right-1];
                 counter++;
@@ -48,8 +48,8 @@ int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSi
             right--;
         }
         
-        
-        if (up<=down) {
+        //這邊counter 15  matrix[1][2]
+        if (up<down) {
             for (int i = right-1; i>=left; i--) {
                 ret[counter] = matrix[down-1][i];
                 counter++;
@@ -58,7 +58,7 @@ int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSi
         }
         
         
-        if (left<=right) {
+        if (left<right) {
             for (int i = down-1; i>=up; i--) {
                 ret[counter] = matrix[i][left];
                 counter++;
