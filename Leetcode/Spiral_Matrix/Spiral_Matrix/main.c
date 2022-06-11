@@ -70,7 +70,7 @@ int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSi
      int *ret = (int* ) malloc(sizeof(int) * matrixSize * (*matrixColSize));
     
     
-     ///*
+     // /*
      int up = 0;
      int down = matrixSize;
      int left = 0;
