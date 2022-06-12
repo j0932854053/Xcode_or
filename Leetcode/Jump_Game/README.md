@@ -56,3 +56,6 @@ bool canJump(int* nums, int numsSize){
 }
 ``` 
 參考網站：https://leetcode.jp/leetcode-55-jump-game-%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90/
+
+
+參考網站：https://leetcode.com/submissions/detail/719624152/
