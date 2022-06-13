@@ -17,7 +17,7 @@ int climbStairs(int n){
         return n;
     }
     
-    int* ret = (int* ) malloc (sizeof(int*)*n);
+    int* ret = (int* ) malloc (sizeof(int)*n);
     
     
     ret[0] = 1; // n=1
@@ -35,7 +35,7 @@ int climbStairs(int n){
 
 int main(int argc, const char * argv[]) {
     
-    int n = 2;
+    int n = 4;
     
     int ans = climbStairs(n);
     
