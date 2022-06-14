@@ -40,6 +40,6 @@ __________________________________________________________
 
 
  
-參考網站1：
+參考網站1：https://hackmd.io/@sysprog/bitwise-reverse
 
-參考網站2：
+參考網站2：https://web.ntnu.edu.tw/~algo/Bit.html
